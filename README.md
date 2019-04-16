@@ -8,15 +8,25 @@ Follow the instructions for each of the following code samples in [Compliler Exp
 
 1. [printf](https://godbolt.org/z/y2YKew)
    1. What is the library function that is called?
+   stdio.h
+   
    2. Research the implementation (source code) of this function.
+   it is a library which connects more syntax from other code to use in the use in the program 
+   
    3. Find out if the program directly executes the output operation or it makes a *system call* to the operating system.
+   it executes the operation beacause the program is directly embedded from the library
    
 2. [malloc](https://godbolt.org/z/kAZX7x)
    1. How are the arguments passed to `malloc` and `free`?
+   its being stored/loaded/cleared from registers, stack, and memory
+   
    2. Research the implementation (source code) of `malloc` and `free`.
+   malloc allocates memory and returns a pointer
+   free deallocates the memory that was allocated by malloc
    
 3. [malloc array](https://godbolt.org/z/bBl0zx)
    1. How does this case differ from the previous one?
+      the malloc array is allocating more memory for all the array elements
    2. [**hard**] Write your own tiny `malloc` library by declaring a large `FILL` area and writing a `malloc` and a `free` subroutines that manage allocations to that memory area. 
       1. `malloc` works approximately as follows:
          - it takes as argument the number of bytes requested
